@@ -1,0 +1,64 @@
+﻿Oracle 비밀번호 1234
+*실기시험 설치순서
+1. JDK
+2. oracle 8080 포트
+3. 이클립스
+4. 톰캣 - 포트 8080 -> 8090 변경(오라클과 충돌방지)
+*오라클 접속방법
+
+*오라클 접속방법
+1. run sql command line 실행
+2. conn system/1234
+3. 오류가 날 경우(시험장에서) :
+conn /as sysdba
+alter user system identified by 1234;
+(비밀번호 1234로 변경)
+
+*실기실습
+set linesize 120
+
+desc dm_tbl; // 있는지 확인
+있으면
+drop table dm_tbl; // 테이블 삭제
+cl scr; // 화면 clear
+clear screen; // 화면 
+작업1.
+create table dm_tbl(
+dmno number(8) primary key,
+custid varchar2(10),
+maildate date,
+contents varchar2(20),
+dept char(2),
+grade char(1),
+campain char(2)
+);
+drop table dm_tbl;
+작업2.
+create table bookinfo_tbl(
+custid varchar2(10) primary key,
+author varchar2(20),
+goods char(20),
+phone varchar2(13),
+email varchar2(20),
+area varchar2(20)
+);
+drop table bookinfo_tabl;
+
+작업3.
+insert into dm_tbl values ('1', 'aaa', '20171201', '안녕하세요?', '10', '1', 'C1');
+insert into dm_tbl values ('2', 'bbb', 20171201', '안녕하세요?', '10', '2', 'C1');
+insert into dm_tbl values ('3', 'ccc',' 20171201', '안녕하세요?', '10', '3', 'C1');
+insert into dm_tbl values ('4', 'ddd', '20171224', '안녕하세요?', '10', '4', 'C2');
+insert into dm_tbl values ('5', 'eee', '20171224', '안녕하세요?', '10', '5', 'C2');
+insert into dm_tbl values ('6', 'fff', '20171224', '안녕하세요?', '10', '6', 'C3');
+
+insert into bookinfo_tbl values('aaa', '김고객', '의류', '010-1111-1111', 'aaa@korea.com', '서울');
+insert into bookinfo_tbl values('bbb', '이고객', '의류', '010-1111-1112', 'bbb@korea.com', '서울');
+insert into bookinfo_tbl values('ccc', '박고객', '식료품', '010-1111-1113', 'ccc@korea.com', '경기');
+insert into bookinfo_tbl values('ddd', '홍고객', '공산품', '010-1111-1114', 'ddd@korea.com', '대전');
+insert into bookinfo_tbl values('eee', '조고객', '컴퓨터', '010-1111-1115', 'eee@korea.com', '대전');
+insert into bookinfo_tbl values('fff', '백고객', '관광', '010-1111-1116', 'fff@korea.com', '울산');
+
+작업4.
+select dmno as 발송번호, a.custid as 고객ID, author as 고객명, to_char(maildate, 'yyyy-dd-mm') as 발송일, contents as 내용, campain as 캠페인구분 from dm_tbl a, bookinfo_tbl b where a.custid = b.custid;
+

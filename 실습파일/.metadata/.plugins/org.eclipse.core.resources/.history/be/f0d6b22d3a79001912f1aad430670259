@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="java.sql.*"%>
+<% request.setCharacterEncoding("UTF-8"); %>
+<%
+String Dept_ID = request.getParameter("dept_id"); 
+String Dept_Name = request.getParameter("dept_name");
+String Phone = request.getParameter("phone");
+String url = "jdbc:oracle:thin:@localhost:1521:XE";
+String sql = "INSERT INTO MAJOR(dept_id, dept_name, phone) VALUES(?,?,?)";
+try{
+	Class.forName("oracle.jdbc.driver.OracleDriver");
+	Connection con = DriverManager.getConnection(url, "system", "1234");
+	PreparedStatement pstmt = con.prepareStatement(sql);
+	pstmt.setString(1, Dept_id);
+	pstmt.setString(2, Dept_Name);
+	pstmt.setString(3, Phone);
+	pstmt.executeUpdate();
+}
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

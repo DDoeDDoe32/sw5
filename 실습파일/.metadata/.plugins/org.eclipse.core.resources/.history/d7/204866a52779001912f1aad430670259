@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<center>
+<table width="100%" align="left">
+	<tr>
+		<td width="15%"><a href="a.jsp">학생목록</a>
+		<td width="15%"><a href="a.jsp">교과목코드조회</a>
+		<td width="15%"><a href="a.jsp">과목별성적조회</a>
+		<td width="15%"><a href="a.jsp">개별성적조회</a>
+		<td width="40%">&nbsp;</td>
+	</tr>
+</table>
+</center>
+
+<div align="center">
+<h2><B>학사관리프로그램 Ver1.0</B></h2>
+</div>

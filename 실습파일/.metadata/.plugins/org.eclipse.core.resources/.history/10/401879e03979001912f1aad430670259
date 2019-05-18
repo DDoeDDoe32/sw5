@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="java.sql.*"%>
+<% request.setCharacterEncoding("UTF-8"); %>
+<%
+String Dept_ID = request.getParameter("dept_id"); 
+String Dept_Name = request.getParameter("dept_name");
+String Phone = request.getParameter("phone");
+String url = "jdbc:oracle:thin:@localhost:1521:XE";
+String sql = "INSERT INTO MAJOR(dept_id, dept_name, phone) VALUES(?,?,?)";
+
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

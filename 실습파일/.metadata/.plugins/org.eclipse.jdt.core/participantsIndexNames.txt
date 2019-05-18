@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+C:\sw5\실습파일\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2130459953.index
+\test10\src
+C:\sw5\실습파일\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2416888451.index
+\test10\src

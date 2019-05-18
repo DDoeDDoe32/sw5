@@ -1,0 +1,63 @@
+﻿화면기본설계서
+항목명 종류 자릿수 항목수
+항목은 10개는 적어야한다.
+필요한 것들
+그래야 60점이상 받을 수 있다.
+
+뭘 적든간에 한 10개 적으면 점수 준다.
+정답은 없다.
+
+11개 항목 중 8개 항목을 합격해야함.
+		Header 영역
+		Nav 영역
+		Section영역
+
+교무학사관리 프로그램을 작성할 수 있다.
+1. 학생기본테이블 생성
+2. 교과목코드 테이블 생성
+3. 성적조회 테이블 생성
+
+한국산업인력공단 Copyright@2019 All rights		Footer영역
+
+create table student (
+sid char(8) primary key,
+sname varchar2(20) not null,
+subcode char(2),
+jumin varchar2(14),
+phone varchar2(13),
+email varchar2(50)
+);
+
+insert into student values ('20150011', '김한국', '01', '880404-1228225', '010-1111-1234', 'hankuk@naver.com');
+insert into student values ('20150012', '홍길동', '01', '900404-1333333', '010-5555-1234', 'hongkil@naver.com');
+insert into student values ('20150013', '김미자', '01', '770404-2777777', '010-6666-2345', 'kimja@naver.com');
+insert into student values ('20150014', '윤한얼', '02', '890404-1228225', '010-7777-2345', 'yoon@naver.com');
+insert into student values ('20150015', '서현석', '02', '910404-1444444', '010-2222-2345', 'seo@naver.com');
+insert into student values ('20150016', '홍순례', '03', '860404-1228225', '010-3333-2345', 'hong@naver.com');
+
+create table subject(
+subcode char(4) primary key,
+subname varchar2(30),
+proname varchar2(20)
+);
+
+insert into subject values('A001','자바','차범근');
+insert into subject values('A002','기초영어','김미숙');
+insert into subject values('A003','데이터베이스','서길동');
+insert into subject values('B001','웹프로그램','이건원');
+insert into subject values('B002','웹프로그램','박태민');
+
+select subname 강의명, proname 교수명 , sname 수강생, phone 폰번호, email 이메일
+from student st, subject sb
+where st.subcode = substr(sb.subcode,3,4);
+
+eclipse 쿼리문...studentlist.jsp
+String sql ="select sid, sname, subname, substr(jumin,1,8) jumin, decode(substr(jumin,8,1),'1','남','2','여') gubun, phone, email from student A, subject b where a.subcode = substr(b.subcode,3,2)";
+
+create table major(
+dept_id char(2) primary key,
+dept_name varchar2(20) not null,
+phone varchar2(13)
+);
+
+

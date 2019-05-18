@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>교무학사관리시스템 Ver1.0</title>
+</head>
+<body>
+<div style='height:150PX; text-align:center'>
+<%@ include file="main_header.jsp" %>
+</div>
+<div style='text-align:center'>
+<%@ include file="main_nav.jsp" %>
+<%@ include file="main_contents.jsp" %>
+</div>
+
+
+
+</body>
+</html>
