@@ -7,7 +7,7 @@
 		<td width="20%">&nbsp;</td>
 		<td width="15%"><a href="studentlist.jsp">학생목록</a>
 		<td width="15%"><a href="subjectlist.jsp">교과목코드조회</a>
-		<td width="15%"><a href="subjectscore.jsp">과목별성적조회</a>
+		<td width="15%"><a href="majorModify.jsp">학과코드수정</a>
 		<td width="15%"><a href="scorelist.jsp">개별성적조회</a></td>
 		<td width="20%">&nbsp;</td>
 	</tr>
